@@ -4,6 +4,9 @@ Arduino friendly [VAN bus][van_network] writer library utilizing ESP32 RMT perip
 
 VAN bus is pretty similar to CAN bus. It was used in many cars (Peugeot, Citroen) made by PSA.
 
+# *Please don't use this project! It was a proof of concept which failed. To have a fully working alternative, check this link: [ Arduino TSS463C VAN interface library][tss_463_lib]*
+Although it is possible to generate VAN message packets with the RMT peripheral of the ESP32 it can't be used safely as it will overwrite messages sent by other peripherals on the bus. It kind-of works on the bench with just one multifunction display however **in a car it will cause troubles**.
+
 ### Schematics
 ![schema](https://github.com/morcibacsi/esp32_rmt_van_tx/raw/master/schema/esp32-sn65hvd230-mfd.png)
 
@@ -49,3 +52,4 @@ Also thanks goes to Kim Eckert for his idea of [RMT durations][kim_eckert_rmt_rx
 [graham_auld_crc]: http://graham.auld.me.uk/projects/vanbus/crc15.html
 [kim_eckert_rmt_rx]: https://github.com/kimeckert/ESP32-RMT-Rx-raw
 [esp32_van_tx_youtube]: https://youtu.be/SQ3sJHYcR4E](https://youtu.be/SQ3sJHYcR4E)
+[tss_463_lib]: https://github.com/morcibacsi/arduino_tss463_van
